@@ -11,5 +11,15 @@ else
 	echo "NOK"
 fi
 
+echo -n "Ajout phpinfo : "
+rm -f /var/www/index.html
+echo "<?phpinfo(); ?>" >> /var/www/index.php
+
+if [ $? -eq 0 ]; then 
+	echo "OK"
+else
+	echo "NOK"
+fi
+
 echo "End -- LAMPconfig -- end"
 echo
