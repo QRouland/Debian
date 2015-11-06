@@ -1,0 +1,23 @@
+#!/bin/bash
+echo
+echo "Start -- SVNtest -- Start"
+
+echo -n "SVNinstall : "
+if [ $(dpkg-query -W -f='${Status}' subversion 2>/dev/null | grep -c "ok installed") -eq 1 ]
+then
+  echo "OK"
+else
+  echo "NOK"
+fi
+
+echo -n "SVNconfig :"
+if test -f /home/svns/EC/.svn
+then 
+  echo "OK"
+else
+  echo "NOK"
+fi
+
+echo "End -- SVNtest -- End"
+echo 
+
