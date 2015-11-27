@@ -4,6 +4,7 @@ echo "Start -- SVNinstall -- Start"
 
 echo -n "Installation Subversion : "
 
+exec apt-get-wait.sh
 apt-get -y install subversion &>/dev/null
 
 if [ $? -eq 0 ]; then 

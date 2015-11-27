@@ -22,8 +22,8 @@ echo -n "SVN test utilisation :"
 mkdir /home/svn_client1/
 mkdir /home/svn_client2/
 
-svn co file:///home/svns/EC /home/svn_client1/
-svn co file:///home/svns/EC /home/svn_client2/
+svn co file:///home/svns/EC /home/svn_client1/ &>/dev/null
+svn co file:///home/svns/EC /home/svn_client2/ &>/dev/null
 
 cd /home/svn_client1/
 touch fichier_test
@@ -31,7 +31,7 @@ svn add fichier_test
 svn commit -m ""
 
 cd /home/svn_client2/
-svn update
+svn update &>/dev/null
 
 if [ -f "fichier_test" ]; then
 	echo "OK"
@@ -40,11 +40,11 @@ else
 fi
 
 cd /home/svn_client2/
-rm fichier_test
-svn commit -m ""
+rm -f fichier_test
+svn commit -m "" &>/dev/null
 
-rm -r /home/svn_client1/
-rm -r /home/svn_client2/
+rm -rf /home/svn_client1/
+rm -rf /home/svn_client2/
 
 echo "End -- SVNtest -- End"
 echo 

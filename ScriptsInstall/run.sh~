@@ -1,10 +1,10 @@
-if[ "$(id -u)" != 0 ]; then 
+if ["$(id -u)" != 0 ]; then 
 	echo "Le script doit etre lancé en root" 1>&2
 	exit 1
 fi
 
 echo "Start -- Mise a jour des Paquets -- Start"
-apt-get -y update && apt-get -y upgrade
+apt-get -y update &>/dev/null && apt-get -y upgrade &>/dev/null
 echo "End --  Mise a jour des Paquets -- End"
 echo
 

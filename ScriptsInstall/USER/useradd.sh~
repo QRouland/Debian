@@ -27,7 +27,6 @@ EOF
 		echo "NOK"
 	fi	
 done
-echo "OK"
 
 echo "End -- AddUsers -- end"
 echo

@@ -19,7 +19,7 @@ EOF
 	fi	
 	
 	echo -n "Expirer le mot de passe de $u : "
- 	passwd -e ${u}
+ 	passwd -e ${u} &>/dev/null
 
 	if [ $? -eq 0 ]; then 
 		echo "OK"
