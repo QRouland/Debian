@@ -1,8 +1,0 @@
-#!/bin/bash
-echo
-echo "Start -- SSHconfig -- Start"
-
-echo "Rien a faire : ok"
-
-echo "End -- SSHconfig -- end"
-echo
